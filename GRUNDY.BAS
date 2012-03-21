@@ -1,6 +1,6 @@
 REM This program is for the TSC TTP-247 printer.
 REM It will take a scanned input barcode that is 9 characters or shorter
-REM and print out a 14 digit codabar barcode including a prefix (3), a "sitecode"
+REM and print out a 14 digit codabar barcode including a prefix (3), a sitecode
 REM (a unique 4 digit code for that library) and enough 0's to bring the
 REM barcode up to 14 digits.
 
