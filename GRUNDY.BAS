@@ -4,7 +4,7 @@ REM and print out a 14 digit codabar barcode including a prefix (3), a sitecode
 REM (a unique 4 digit code for that library) and enough 0's to bring the
 REM barcode up to 14 digits.
 
-REM Good settings for the Trucode labels from vernonlib.com
+REM Good settings for the Trucode labels from vernlib.com
 SIZE 2.12,0.75
 GAP 0.125,0
 DENSITY 10
