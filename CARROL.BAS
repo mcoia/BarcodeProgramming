@@ -23,7 +23,7 @@ REM Setting up some initial variables. PREFIX$ is 3 to indicate an item barcode
 REM SITECODE$ is the last 4 digits of their phone number, but just needs to be
 REM unique to each library.
 LENGTH=14
-LIBRARYNAME$="Carrolton Public Library"
+LIBRARYNAME$="Carrollton Public Library"
 PREFIX$="3"
 SITECODE$="0183"
 SCANNED$=""
@@ -54,7 +54,7 @@ REM Just for the nice formatting
 CODEPART1$=MID$(CODE$,6,5)
 CODEPART2$=MID$(CODE$,11,4)
 
-TEXT 40,20,"2",0,1,1,LIBRARYNAME$
+TEXT 55,20,"2",0,1,1,LIBRARYNAME$
 REM Remember that codabar needs start and end letters (a,b)
 BARCODE 60,50,"CODA",64,0,0,2,4,"A"+CODE$+"B"
 REM This line prints the numbers below the barcode and formats it nicely
