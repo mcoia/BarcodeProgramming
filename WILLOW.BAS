@@ -23,9 +23,9 @@ REM Setting up some initial variables. PREFIX$ is 3 to indicate an item barcode
 REM SITECODE$ is the last 4 digits of their phone number, but just needs to be
 REM unique to each library.
 LENGTH=14
-LIBRARYNAME$="CAMERON PUBLIC LIBRARY"
+LIBRARYNAME$="WILLOW SPRINGS PUBLIC LIBRARY"
 PREFIX$="3"
-SITECODE$="2311"
+SITECODE$="3482"
 SCANNED$=""
 CODE$=""
 PAD$=""
@@ -40,7 +40,7 @@ PADLEN=LENGTH-ORIGLEN-5
 
 REM Add enough zeros to bring the barcode up to LENGTH
 FOR I=1 TO PADLEN
-  PAD$=PAD$+"1"
+  PAD$=PAD$+"0"
 NEXT
 
 CODE$=PREFIX$+SITECODE$+PAD$+SCANNED$
@@ -57,7 +57,7 @@ CODEPART1$=MID$(CODE$,6,5)
 CODEPART2$=MID$(CODE$,11,4)
 
 REM First param is how far to the right to push text, second is dist from top
-TEXT 68,20,"2",0,1,1,LIBRARYNAME$
+TEXT 20,20,"2",0,1,1,LIBRARYNAME$
 REM Remember that codabar needs start and end letters (a,b)
 BARCODE 60,50,"CODA",64,0,0,2,4,"A"+CODE$+"B"
 REM This line prints the numbers below the barcode and formats it nicely

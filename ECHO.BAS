@@ -31,8 +31,6 @@ CODE$=""
 PAD$=""
 
 INPUT "ENTER BAR CODE:",SCANNED$
-REM Cameron barcodes have various formats, trim off the leading junk
-SCANNED$=TRIM$(SCANNED$, " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
 REM Calculate the padding required
 ORIGLEN=LEN(SCANNED$)
@@ -40,28 +38,28 @@ PADLEN=LENGTH-ORIGLEN-5
 
 REM Add enough zeros to bring the barcode up to LENGTH
 FOR I=1 TO PADLEN
-  PAD$=PAD$+"1"
+  PAD$=PAD$+"0"
 NEXT
 
 CODE$=PREFIX$+SITECODE$+PAD$+SCANNED$
 
 REM Make sure we haven't scanned in something too long
-IF LEN(CODE$)>LENGTH THEN
-  TEXT 90,80,"2",0,1,1,"BARCODE TOO LONG"
-  PRINT 1
-  GOTO START
-ENDIF
+REM IF LEN(CODE$)>LENGTH THEN
+REM   TEXT 90,80,"2",0,1,1,"BARCODE TOO LONG"
+REM  PRINT 1
+REM  GOTO START
+REM ENDIF
 
 REM Just for the nice formatting
 CODEPART1$=MID$(CODE$,6,5)
 CODEPART2$=MID$(CODE$,11,4)
 
-REM First param is how far to the right to push text, second is dist from top
+REM First param is how far to the right to push text, second is dist from topS
 TEXT 68,20,"2",0,1,1,LIBRARYNAME$
 REM Remember that codabar needs start and end letters (a,b)
 BARCODE 60,50,"CODA",64,0,0,2,4,"A"+CODE$+"B"
 REM This line prints the numbers below the barcode and formats it nicely
-TEXT 95,120,"2",0,1,1,PREFIX$+" "+SITECODE$+" "+CODEPART1$+" "+CODEPART2$
+TEXT 95,120,"2",0,1,1,TRIM$(SCANNED$, "T0 ")
 PRINT 1,1
 GOTO START
 EOP
