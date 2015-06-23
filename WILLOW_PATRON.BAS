@@ -24,8 +24,8 @@ REM SITECODE$ is the last 4 digits of their phone number, but just needs to be
 REM unique to each library.
 LENGTH=14
 LIBRARYNAME$="WILLOW SPRINGS PUBLIC LIBRARY"
-PREFIX$="3"
-SITECODE$="2482"
+PREFIX$="2"
+SITECODE$="3482"
 SCANNED$=""
 CODE$=""
 PAD$=""
